@@ -1,0 +1,633 @@
+@font-face {
+  font-family: nunitoFont;
+  src: url(../font/Nunito-Regular.ttf);
+}
+
+html, body {
+  font-family: nunitoFont;
+}
+
+#cvArea {
+  width: 90vw;
+  height: calc( 100vh - 180px );
+  z-index: 2;
+  border: 30px solid;  
+  box-sizing: border-box;
+  border-image: url(../images/curlyBorder.png) 40 round; 
+  -webkit-border-image: url(../images/curlyBorder.png) 40 round; /* Safari 3.1-5 */
+  -o-border-image: url(../images/curlyBorder.png) 40 round; /* Opera 11-12.1 */
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.floatLeft {
+  float:left;
+}
+
+#downloadCVIcon {
+   position: absolute;
+    right: 70px;
+    float: right;
+    margin-right: 40px;
+	margin-top: -30px;
+}
+
+#styleForCV {
+ color: grey;
+    border-bottom: 0;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-size: 0.9em;
+    font-weight: 550;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.indent {
+  margin-left: 20%;
+}
+
+#character {
+	  position: absolute;
+	    top: calc( 50% - 29px );
+	    left: calc( 50% - 43px);    
+       width: 57px;
+	    height: 86px;
+	/* background: url('../character7.png') no-repeat; */
+	background: url('../character7.png') no-repeat;
+	-webkit-background: url(../character7.png); /* Safari 3.1-5 */
+    -o-background: url(../character7.png); /* Opera 11-12.1 */
+    z-index: 3;
+}
+
+#educationAndQualifications {
+  position: absolute;
+      top: 5%;
+	    left: 5%;    
+      width: 95px;
+	    height: 75px;
+      /*background: url('../images/educationAndQualifications.png') no-repeat;*/
+	background: url(../images/educationAndQualifications.png) no-repeat;
+	-webkit-background: url(../images/educationAndQualifications.png); /* Safari 3.1-5 */
+    -o-background: url(../images/educationAndQualifications.png); /* Opera 11-12.1 */
+      z-index: 2;
+}
+
+#profile {
+  position: absolute;
+      top: 5%;
+	    right: 5%;    
+      width: 95px;
+	    height: 89px;
+      /* background: url('../images/profile.jpg') no-repeat; */
+	  background: url(../images/profile.jpg) no-repeat;
+	-webkit-background: url(../images/profile.jpg); /* Safari 3.1-5 */
+    -o-background: url(../images/profile.jpg); /* Opera 11-12.1 */
+      z-index: 2;
+      border-radius: 5px;
+}
+
+#workExperience {
+  position: absolute;
+      bottom: 5%;
+	    left: 5%;    
+      width: 95px;
+	    height: 96px;
+    /*  background: url('../images/workExperience.png') no-repeat; */
+	 background: url(../images/workExperience.png) no-repeat;
+	-webkit-background: url(../images/workExperience.png); /* Safari 3.1-5 */
+    -o-background: url(../images/workExperience.png); /* Opera 11-12.1 */
+      z-index: 2;
+}
+
+#hobbies {
+  position: absolute;
+      bottom: 5%;
+	    right: 5%;    
+      width: 110px;
+	    height: 109px;
+      background: url('../images/hobbiesAndInterests.png') no-repeat;
+	   background: url(../images/hobbiesAndInterests.png) no-repeat;
+	-webkit-background: url(../images/hobbiesAndInterests.png); /* Safari 3.1-5 */
+    -o-background: url(../images/hobbiesAndInterests.png); /* Opera 11-12.1 */
+      z-index: 2;
+}
+
+#character.front-right { background-position: 0px 8px; }
+   #character.front-stand { background-position: -82px 10px; }
+    #character.front-left { background-position: -164px 10px; }
+ 
+    #character.left-right { background-position: 0px -79px; }
+    #character.left-stand { background-position: -82px -77px; }
+    #character.left-left { background-position: -176px -75px; }
+ 
+    #character.right-right { background-position: -166px -162px; }
+    #character.right-stand { background-position: -82px -162px; }
+    #character.right-left { background-position: -0px -162px; }
+ 
+    #character.back-right { background-position: 0px -252px; }
+    #character.back-stand { background-position: -82px -252px; }
+    #character.back-left { background-position: -164px -252px; }
+
+/* MODAL FOR EDU */
+.modalEdu {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-contentEdu {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+   width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  font-family: 'nunitoFont', sans-serif;
+  z-index: 5; /* Sit on top */
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetopEdu {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetopEdu {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+span.closeEdu {
+  color: white;
+  display: block;
+  padding: 10px;
+  float: right;
+  font-size: 34px;
+  font-weight: bold;
+  z-index: 5; /* Sit on top */
+  cursor: pointer;
+}
+
+.closeEdu:hover, .closeEdu:focus {
+  color: rgb(250, 6, 6);
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 5; /* Sit on top */
+}
+
+.modal-headerEdu {
+  padding: 2px 16px;
+  margin-top: 55px;
+  background-color: #5c96b8;
+  color: white;
+  z-index: 5; /* Sit on top */
+}
+
+.modal-bodyEdu {padding: 2px 16px;}
+
+.modal-footerEdu {
+  padding: 2px 16px;
+  background-color: #5c96b8;
+  color: white;
+  text-align: center;
+}
+
+.floatRight {
+    float: right;
+}
+/* END OF MODAL FOR EDU */
+
+/* MODAL FOR PROFILE */
+
+.modalProfile {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 4; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-contentProfile {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+   width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  font-family: 'nunitoFont', sans-serif;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetopProfile {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetopProfile {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.closeProfile {
+  color: white;
+  float: right;
+  font-size: 34px; 
+  font-weight: bold;
+}
+
+.closeProfile:hover,
+.closeProfile:focus {
+  color: rgb(245, 28, 28);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-headerProfile {
+  padding: 2px 16px;
+  background-color: #5c96b8;
+  color: white;
+  margin-top: 55px;
+}
+
+.modal-bodyProfile {
+  padding: 2px 16px;
+    line-height: 1.5;
+}
+
+.modal-footerProfile {
+  padding: 1px 12px;
+  border-radius: 0px 0px 2px 2px;
+  text-align: center;
+  background-color: #5c96b8;
+  color: white;
+}
+/* END OF MODAL FOR PROFILE */
+
+/* MODAL FOR WORK EXPERIENCE */
+
+.modalWE {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 4; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-contentWE {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+   width: 80%;
+   text-align: left;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  font-family: 'nunitoFont', sans-serif;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetopWE {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetopWE {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.closeWE {
+  color: white;
+  float: right;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.closeWE:hover,
+.closeWE:focus {
+  color: rgb(245, 28, 28);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-headerWE {
+  padding: 2px 16px;
+  background-color: #5c96b8;
+  color: white;
+  margin-top: 55px;
+}
+
+.modal-bodyWE {
+  padding: 4px 16px;
+    line-height: 1.5;
+}
+
+.modal-footerWE {
+  padding: 1px 12px;
+  border-radius: 0px 0px 2px 2px;
+  text-align: center;
+  background-color: #5c96b8;
+  color: white;
+}
+
+/* END OF MODAL FOR WORK EXPERIENCE */
+
+/* MODAL FOR HOBBIES */
+
+.modalHobbies {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 4; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-contentHobbies {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+   /* width: 80%; */
+   width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  font-family: 'nunitoFont', sans-serif;
+}
+
+#socialIcon {
+   float: right;
+   margin-top: -170px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetopHobbies {  
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetopHobbies {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.closeHobbies {
+  color: white;
+  float: right;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.closeHobbies:hover,
+.closeHobbies:focus {
+  color: rgb(245, 28, 28);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-headerHobbies {
+  padding: 2px 16px;
+  background-color: #5c96b8;
+  color: white;
+  margin-top: 55px;
+}
+
+.modal-bodyHobbies {
+  padding: 2px 16px;
+    line-height: 1.5;
+}
+
+.modal-footerHobbies {
+  padding: 1px 12px;
+  border-radius: 0px 0px 2px 2px;
+  text-align: center;
+  background-color: #5c96b8;
+  color: white;
+}
+/* END OF MODAL FOR Hobbies */
+
+/* START OF BACKGROUND ANIMATION */
+.skill{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+.skill div{
+position:absolute;
+display:block;
+}
+
+.skill div:nth-child(1){
+    left:20%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-2s;
+
+}
+.skill div:nth-child(2){
+    left:70%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-4s;
+}
+.skill div:nth-child(3){
+    left:10%; 
+    animation:fall 20s linear infinite ;
+    animation-delay:-7s;
+    
+}
+.skill div:nth-child(4){
+    left:50%; 
+   animation:fall 18s linear infinite ; 
+   animation-delay:-5s;
+}
+.skill div:nth-child(5){
+    left:85%; 
+    animation:fall 14s linear infinite ;
+    animation-delay:-5s;
+}
+.skill div:nth-child(6){
+    left:15%; 
+    animation:fall 16s linear infinite ;
+    animation-delay:-10s;
+}
+.skill div:nth-child(7){
+    left:90%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-4s;
+}
+
+@keyframes fall{
+    0%{
+        opacity:1;
+        top:-10%;
+        transform:translateX (20px) rotate(0deg);
+    }
+    20%{
+        opacity:0.8;
+        transform:translateX (-20px) rotate(45deg);
+    }
+    40%{
+
+        transform:translateX (-20px) rotate(90deg);
+    }
+    60%{
+        
+       transform:translateX (-20px) rotate(135deg); 
+    }
+    80%{
+    
+        transform:translateX (-20px) rotate(180deg);
+    }
+    100%{
+        top:110%;
+        transform:translateX (-20px) rotate(225deg);
+    }
+    }
+.skill1{
+    transform: rotateX(180deg);
+}
+
+h2 {
+    position:relative;
+    text-align:center;
+    transform:translate;
+    color:#fff;
+    transform:translateY (-50%);
+}
+
+.purpleFont{ color:purple;}
+.redFont{ color:red;}
+.greenFont{ color:green;}
+.orangeFont{ color:orange;}
+.blueFont{ color:blue;}
+/* END OF BACKGROUND ANIMATION */
+
+
+  /* START OF HEADER ANIMATION */
+  div#centerHeading {
+   text-align: center;
+   width: 100%;
+}
+
+section.headerSection {
+  display: inline-flex;
+   overflow:hidden;
+  font-size: 32px;
+  color:#555;
+} 
+
+div.heading {   
+  animation: showup 7s 1;
+  text-align:center;
+  }
+
+div.subHeading {
+  width:0px;
+  animation: reveal 7s 1;
+}
+
+div.subHeading span {
+  margin-left:-355px;
+  animation: slidein 7s 1;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:455px;}
+    80% {opacity:1;}
+    100% { opacity:0;width:295px; }
+}
+/* END OF HEADER ANIMATION */
+
+/* ARROW KEYS */
+.upKey {
+    position: absolute;
+    top: 70px;
+    float: left;
+    margin-left: 20px;
+}
+.downKey {
+   position: absolute;
+   top: 100px;
+    float: left;
+    margin-left: 20px;
+}
+.leftKey {
+    position: absolute;
+    float: left;
+    top: 40px;
+    margin-left: -11px;
+    margin-top: 60px;
+}
+.rightKey {
+    position: absolute;
+    top: 40px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+/* ARROW KEYS */
