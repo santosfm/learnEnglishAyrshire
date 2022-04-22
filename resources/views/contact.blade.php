@@ -106,7 +106,7 @@
                 <div class="col-lg-4">
                     <div class="left-content">
                         <div class="inner-content">
-                            <h4>Frequently Asked Questions</h4>
+                            <h4>Contact the Tutor</h4>
                             <h6>THE BEST EXPERIENCE</h6>
                             <div class="main-white-button scroll-to-section">
                                 <a href="#contact">Book a lesson</a>
