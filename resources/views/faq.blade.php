@@ -108,7 +108,7 @@
                             <h4>Frequently Asked Questions</h4>
                             <h6>THE BEST EXPERIENCE</h6>
                             <div class="main-white-button scroll-to-section">
-                                <a href="#contact">Book a lesson</a>
+                                <a href="{{ route('contact') }}">Book a lesson</a>
                             </div>
                         </div>
                     </div>
